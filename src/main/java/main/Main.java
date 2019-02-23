@@ -2,6 +2,7 @@ package main;
 
 import product.Product;
 import product.ProductService;
+import strategy.DiscountType;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,19 +28,28 @@ public class Main {
                 Arrays.asList(productOne,productTwo,productThree,productFour);
 
 
+        ProductService productService = new ProductService();
         System.out.println("Christmas time ...");
-        products.forEach(p->p.setDiscount(ProductService.christmasDiscount(p.getCost())));
-        products.forEach(p->p.showProductInfo());
-
-
-        System.out.println("\n\nNew Yer time ...");
-        products.forEach(p->p.setDiscount(ProductService.newYearDiscount(p.getCost())));
-        products.forEach(p->p.showProductInfo());
-
-
+        productService.discount(productOne, DiscountType.CHRISTMASS);
         System.out.println("\n\nEaster time ...");
-        products.forEach(p->p.setDiscount(ProductService.easterDiscount(p.getCost())));
-        products.forEach(p->p.showProductInfo());
+        productService.discount(productOne, DiscountType.EASTER);
+        System.out.println("\n\nNew Yer time ...");
+        productService.discount(productOne, DiscountType.NEWYEAR);
+
+
+//        System.out.println("Christmas time ...");/**/
+//        products.forEach(p->p.setDiscount(ProductService.christmasDiscount(p.getCost())));
+//        products.forEach(p->p.showProductInfo());
+//
+//
+//        System.out.println("\n\nNew Yer time ...");
+//        products.forEach(p->p.setDiscount(ProductService.newYearDiscount(p.getCost())));
+//        products.forEach(p->p.showProductInfo());
+//
+//
+//        System.out.println("\n\nEaster time ...");
+//        products.forEach(p->p.setDiscount(ProductService.easterDiscount(p.getCost())));
+//        products.forEach(p->p.showProductInfo());
 
     }
 }
