@@ -21,21 +21,22 @@ public class ProductService {
         if (discountType.equals(DiscountType.CHRISTMASS)){
             discountStrategy = new ChristimassStrategy();
             product.setDiscount(discountStrategy.discountCalculation(product.getCost()));
-            System.out.println(product.getCost());
-            System.out.println(product.getDiscount());
+            System.out.println("Pełna cena produktu to: " + product.getCost());
+            System.out.println("Udzielony ramat z okazji Christmass: " + product.getDiscount());
+            System.out.println("Tylko teraz zapłacisz tylko " + (product.getCost() - product.getDiscount())+ "!!!!!!!!!!!");
         }
         if (discountType.equals(DiscountType.EASTER)){
             discountStrategy = new EasterStrategy();
             product.setDiscount(discountStrategy.discountCalculation(product.getCost()));
-            System.out.println(product.getCost());
-            System.out.println(product.getDiscount());
-        }
+            System.out.println("Pełna cena produktu to: " + product.getCost());
+            System.out.println("Udzielony ramat z okazji Easter: " + product.getDiscount());
+            System.out.println("Tylko teraz zapłacisz tylko " + (product.getCost() - product.getDiscount())+ "!!!!!!!!!!!");        }
         if (discountType.equals(DiscountType.NEWYEAR)){
             discountStrategy = new NewYearStrategy();
             product.setDiscount(discountStrategy.discountCalculation(product.getCost()));
-            System.out.println(product.getCost());
-            System.out.println(product.getDiscount());
-        }
+            System.out.println("Pełna cena produktu to: " + product.getCost());
+            System.out.println("Udzielony ramat z okazji New Year: " + product.getDiscount());
+            System.out.println("Tylko teraz zapłacisz tylko " + (product.getCost() - product.getDiscount())+ "!!!!!!!!!!!");        }
     }
 
 }
